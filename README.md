@@ -1,11 +1,12 @@
 # OneApiSdk
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/one_api_sdk`. To experiment with that code, run `bin/console` for an interactive prompt.
+OneApiSdk is a Ruby gem that provides a user-friendly interface for accessing and interacting with TheOneApi. With this gem, you can easily make API calls and retrieve results without dealing with the complexities of constructing URLs and handling the underlying HTTP requests.
 
-TODO: Delete this and the text above, and describe your gem
+I used `ruby 2.7.6` version for this gem.
 
 ## Installation
 
+For testing create a build of your sdk by this comman
 Add this line to your application's Gemfile:
 
 ```ruby
@@ -22,19 +23,22 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To get started, require the gem and create an instance of `OneApiSDK`
+In this gem you can use two basic end points for `TheOneAPI`
+Movie : `OneApiSdk::Movie.new`
+Quote : `OneApiSdk::Quote.new`
 
-## Development
+## Making API Calls
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+There are many API calls that you can do with this gem like getting filtered results along with pagination and sorting. Here are the examples of few.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+`TheOneApi::Quote.new.sort_by("movie", 'asc').paginate_by('limit', 3).execute`
+`OneApiSdk::Movie.new.greater_than('runtimeInMinutes', 400).execute `
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/one_api_sdk.
-
+Contributions to TheOneApi gem are welcome! If you encounter any issues or have suggestions for improvements, please open an issue on the GitHub Repo.
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+TheOneApi gem is released under the [MIT License](https://chat.openai.com/link-to-license).
