@@ -17,7 +17,7 @@ module OneApiSdk
       http.use_ssl = true
 
       request = Net::HTTP::Get.new(uri)
-      request['Authorization'] = ENV['THE_ONE_API_KEY'] || Rails.application&.credentials&.the_one_api_key
+      request['Authorization'] = "Bearer " + (ENV['THE_ONE_API_KEY'] || Rails.application&.credentials&.the_one_api_key)
 
       JSON.parse(http.request(request).body)
     end

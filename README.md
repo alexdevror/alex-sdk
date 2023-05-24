@@ -10,7 +10,12 @@ For testing create a build of your sdk by this comman
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'one_api_sdk'
+gem 'one_api_sdk-alex'
+```
+
+Add evironment variable
+```
+THE_ONE_API_KEY=[Your key]
 ```
 
 And then execute:
@@ -19,7 +24,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install one_api_sdk
+    $ gem install one_api_sdk-alex
 
 ## Usage
 
@@ -32,7 +37,7 @@ Quote : `OneApiSdk::Quote.new`
 
 There are many API calls that you can do with this gem like getting filtered results along with pagination and sorting. Here are the examples of few.
 
-`TheOneApi::Quote.new.sort_by("movie", 'asc').paginate_by('limit', 3).execute`
+`OneApiSdk::Quote.new.sort_by("movie", 'asc').paginate_by('limit', 3).execute`
 `OneApiSdk::Movie.new.greater_than('runtimeInMinutes', 400).execute `
 
 ## Contributing
